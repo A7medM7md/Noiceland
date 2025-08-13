@@ -1,62 +1,93 @@
-.navigation {
-  height: 90px;
-  background-color: #fff;
-  border-bottom: 1px solid #e6e6e6;
-  padding: 0 90px;
+.navbar-custom {
+  background-color: var(--bs-body-bg);
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
 
-.navbar-nav{
-    margin-left: 60px;
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+  margin-right: 0;
 }
 
-.image-logo {
-  max-height: 50px;
-}
 
 .navbar-nav .nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 20px !important;
+  margin: 0 5px;
+  transition: all 0.3s ease;
   position: relative;
-  font-family: 'Libre Franklin', sans-serif;
-  color: #000;
-  font-size: 14px;
-  line-height: 24px;
-  text-decoration: none;
-  font-weight: 700;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #000 !important;
+}
+a:hover{
+    cursor: pointer;
 }
 
 .navbar-nav .nav-link::after {
-  content: "";
+  content: '';
   position: absolute;
-  bottom: 0;
-  left: 15px;
-  width: 0;
+  bottom: -2px;
+  left: 20px;
+  right: 20px;
   height: 2px;
-  background-color: black;
-  transition: width 0.5s ease;
+  background-color: var(--bs-secondary-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover::after {
-  width: calc(100% - 30px);
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  transform: scaleX(1);
 }
 
-@media (max-width: 992px) {
-  .navigation{
-    padding: 0 10px;
-  }
+.navbar-toggler {
+  border: none;
+  padding: 4px 8px;
+  font-size: 18px;
+}
 
-  .navbar-collapse {
-    background-color: #fff;
-    padding: 50px;
-  }
+.navbar-toggler:focus {
+  box-shadow: none;
+}
 
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2844, 44, 44, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Switch label color follows theme */
+.form-check-label {
+  color: var(--bs-secondary-color);
+}
+
+/* Mobile styles */
+@media (max-width: 991.98px) {
   .navbar-nav {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+    text-align: center;
+    margin-top: 15px;
   }
 
   .navbar-nav .nav-link {
-    font-size: 18px;
-    padding: 8px 0;
+    padding: 12px 20px !important;
+    margin: 2px 0;
   }
+
+  .navbar-nav .nav-link::after {
+    display: none;
+  }
+
+  .navbar-collapse {
+    border-top: 1px solid var(--bs-border-color);
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+}
+
+.navbar-collapse {
+  transition: all 0.3s ease;
 }
