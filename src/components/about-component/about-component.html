@@ -31,117 +31,42 @@
     </div>
   </div>
 </div>
+
 <div class="separator">
   <div class="separator-container">
     <div class="line-color"></div>
   </div>
 </div>
+
 <div class="team">
   <div class="container px-5">
     <div class="section-title-big">our team</div>
     <div class="posts-wrapper">
       <div class="collection-list-wrapper-7 w-dyn-list">
         <div role="list" class="w-dyn-items w-row">
+          @for(t of TeamList; track t.img;){
           <div role="listitem" class="team-collection-item w-dyn-item w-col w-col-3">
             <div class="team-image">
-              <img alt="" class="w-100" src="assets/images/1.jpg" />
+              <img alt="" class="w-100" [src]="t.img" />
             </div>
             <div class="team-member-info">
-              <div class="team-member-name">Simeon Peterson</div>
-              <div class="team-member-role">Cofounder, Editor in Chief</div>
+              <div class="team-member-name">{{t.name}}</div>
+              <div class="team-member-role">{{t.role}}</div>
             </div>
           </div>
-          <div role="listitem" class="team-collection-item w-dyn-item w-col w-col-3">
-            <div class="team-image">
-              <img alt="" class="w-100" src="assets/images/2.jpg" />
-            </div>
-            <div class="team-member-info">
-              <div class="team-member-name">Simeon Brekke</div>
-              <div class="team-member-role">Cofounder, Partner</div>
-            </div>
-          </div>
-          <div role="listitem" class="team-collection-item w-dyn-item w-col w-col-3">
-            <div class="team-image">
-              <img alt="" class="w-100" src="assets/images/3.jpg" />
-            </div>
-            <div class="team-member-info">
-              <div class="team-member-name">Annie Lueilwitz</div>
-              <div class="team-member-role">Managing Editor</div>
-            </div>
-          </div>
-          <div role="listitem" class="team-collection-item w-dyn-item w-col w-col-3">
-            <div class="team-image">
-              <img alt="" class="w-100" src="assets/images/4.jpg" />
-            </div>
-            <div class="team-member-info">
-              <div class="team-member-name">Reta Torphy</div>
-              <div class="team-member-role">Managing Editor</div>
-            </div>
-          </div>
-          <div role="listitem" class="team-collection-item w-dyn-item w-col w-col-3">
-            <div class="team-image">
-              <img alt="" class="w-100" src="assets/images/5.jpg" />
-            </div>
-            <div class="team-member-info">
-              <div class="team-member-name">Leo Bartell</div>
-              <div class="team-member-role">Editor</div>
-            </div>
-          </div>
-          <div role="listitem" class="team-collection-item w-dyn-item w-col w-col-3">
-            <div class="team-image">
-              <img alt="" class="w-100" src="assets/images/6.jpg" />
-            </div>
-            <div class="team-member-info">
-              <div class="team-member-name">Clem Onojeghuo</div>
-              <div class="team-member-role">Senior Writer</div>
-            </div>
-          </div>
-          <div role="listitem" class="team-collection-item w-dyn-item w-col w-col-3">
-            <div class="team-image">
-              <img alt="" class="w-100" src="assets/images/7.jpg" />
-            </div>
-            <div class="team-member-info">
-              <div class="team-member-name">Michal Legros</div>
-              <div class="team-member-role">Senior Writer</div>
-            </div>
-          </div>
-          <div role="listitem" class="team-collection-item w-dyn-item w-col w-col-3">
-            <div class="team-image">
-              <img alt="" class="w-100" src="assets/images/8.jpg" />
-            </div>
-            <div class="team-member-info">
-              <div class="team-member-name">Rosanna Ondricka</div>
-              <div class="team-member-role">Writer</div>
-            </div>
-          </div>
-          <div role="listitem" class="team-collection-item w-dyn-item w-col w-col-3">
-            <div class="team-image">
-              <img alt="" class="w-100" src="assets/images/9.jpg" />
-            </div>
-            <div class="team-member-info">
-              <div class="team-member-name">Alessandra Ortiz</div>
-              <div class="team-member-role">Writer</div>
-            </div>
-          </div>
-          <div role="listitem" class="team-collection-item w-dyn-item w-col w-col-3">
-            <div class="team-image">
-              <img alt="" class="w-100" src="assets/images/10.jpg" />
-            </div>
-            <div class="team-member-info">
-              <div class="team-member-name">Coby Gottlieb</div>
-              <div class="team-member-role">Writer</div>
-            </div>
-          </div>
+          }
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <div class="separator">
   <div class="separator-container">
     <div class="line-color"></div>
   </div>
 </div>
+
 <div id="contact" class="contact">
   <div class="container px-5">
     <div class="text-container">
@@ -151,45 +76,17 @@
         constituto incorrupte.</p>
     </div>
     <div class="contact-wrapper">
+      @for(c of ContactList; track c.num){
       <div class="contact-item-wrapper">
         <div class="contact-item">
           <div class="contact-number">
-            <div class="number">1</div>
+            <div class="number">{{c.num}}</div>
           </div>
-          <div class="contact-info-subtitle">ADDRESS</div>
-          <div class="contact-info-text">
-            144 N 7th St. #536<br />
-            Brooklyn, NY 11249<br />United States
-          </div>
+          <div class="contact-info-subtitle">{{c.subtitle}}</div>
+          <div class="contact-info-text">{{c.text}}</div>
         </div>
       </div>
-      <div class="contact-item-wrapper">
-        <div class="contact-item">
-          <div class="contact-number">
-            <div class="number">2</div>
-          </div>
-          <div class="contact-info-subtitle">general INQUIRIES</div>
-          <div class="contact-info-text">hello@noiceland.co</div>
-        </div>
-      </div>
-      <div class="contact-item-wrapper">
-        <div class="contact-item">
-          <div class="contact-number">
-            <div class="number">3</div>
-          </div>
-          <div class="contact-info-subtitle">PRESS inquiries</div>
-          <div class="contact-info-text">press@noiceland.co</div>
-        </div>
-      </div>
-      <div class="contact-item-wrapper">
-        <div class="contact-item">
-          <div class="contact-number">
-            <div class="number">4</div>
-          </div>
-          <div class="contact-info-subtitle">potential contributors</div>
-          <div class="contact-info-text">collab@noiceland.co</div>
-        </div>
-      </div>
+      }
     </div>
   </div>
 </div>
